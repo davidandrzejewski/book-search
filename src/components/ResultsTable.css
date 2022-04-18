@@ -1,0 +1,22 @@
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.sort-buttons-container {
+  margin: 20px 0px;
+}
+.sort-buttons-container .sort-button {
+  padding: 5px 10px;
+  background: #fff;
+  border-color: #0175bc;
+  border-radius: 3px;
+  border-width: 1px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.sort-button.selected {
+  background-color: #0175bc;
+  color: #fff;
+}
