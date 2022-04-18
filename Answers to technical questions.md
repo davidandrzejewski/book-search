@@ -34,7 +34,11 @@ axios.get("https://openlibrary.org/api/books", {params: { title: "The Lord of Th
    "React.js",
    "Node.js",
    "Redux.js",
-   "Express.js"
+   "Express.js",
+   "bullmq",
+   "socket.io",
+   "sequelize",
+   "redis"
    ],
    language: "Python",
    years: 1,
