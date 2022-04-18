@@ -22,15 +22,15 @@ return state;
 axios.get("https://openlibrary.org/api/books", {params: { title: "The Lord of The Rings", limit: 20, offset: 20 }})
 
 5. {
-   firstName: "David",
-   lastName: "Andrzejewski",
-   age: 31,
-   status: "Seeking experienced team to join and challenging projects to work on to continue learning and growing as a software developer",
-   experience: [
+   "firstName": "David",
+   "lastName": "Andrzejewski",
+   "age": 31,
+   "status": "Seeking experienced team to join and challenging projects to work on to continue learning and growing as a software developer",
+   "experience": [
    {
-   language: "Javascript",
-   years: 2,
-   librariesAndFrameworks: [
+   "language": "Javascript",
+   "years": 2,
+   "librariesAndFrameworks": [
    "React.js",
    "Node.js",
    "Redux.js",
@@ -39,23 +39,24 @@ axios.get("https://openlibrary.org/api/books", {params: { title: "The Lord of Th
    "socket.io",
    "sequelize",
    "redis"
-   ],
-   language: "Python",
-   years: 1,
-   librariesAndFrameworks: [
-   "Flask",
+   ]},
+   {
+   "language": "Python",
+   "years": 1,
+   "librariesAndFrameworks": [
+   "Flask"
    ]
    }
    ],
-   hobbies: [
+   "hobbies": [
    "Mountain Biking",
    "Kite Surfing",
    "Traveling"
    ],
-   goals: [
+   "goals": [
    "To become a master of software development",
    "To be a mentor to new graduates and young professionals",
    "To complete a desert race"
    ],
-   countriesVisited: 27
+   "countriesVisited": 27
    }
