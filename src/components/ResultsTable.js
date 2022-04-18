@@ -68,7 +68,7 @@ const ResultsTable = ({ results, isLoading }) => {
       ) : results.length ? (
         <div>
           <div className="sort-buttons-container">
-            <span>Sort By: </span>
+            <div>Sort By: </div>
             <ul>
               {sortByConfig.map((sortByButton) => {
                 return (

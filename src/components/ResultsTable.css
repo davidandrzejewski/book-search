@@ -1,11 +1,20 @@
 ul {
   list-style-type: none;
   padding: 0px;
+  margin: 0px;
 }
 
 .sort-buttons-container {
   margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.sort-buttons-container ul {
+  display: flex;
+}
+
 .sort-buttons-container .sort-button {
   padding: 5px 10px;
   background: #fff;
