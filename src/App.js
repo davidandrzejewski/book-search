@@ -14,7 +14,7 @@ const App = () => {
 
     // request the data from openlibrary.org about the books related to "searchTerms"
     const response = await fetch(
-      `http://openlibrary.org/search.json?q=${encodeURIComponent(searchTerms)}`
+      `https://openlibrary.org/search.json?q=${encodeURIComponent(searchTerms)}`
     );
 
     // Fetch the json from the response
