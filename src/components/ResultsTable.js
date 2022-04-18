@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 import BookCard from "./BookCard";
 import "./ResultsTable.css";
@@ -40,15 +40,17 @@ const ResultsTable = ({ results, isLoading }) => {
   // the declaration below assigns sortedResults the value of results sorted according to the conditions below
   // If a sortBy was selected, then sort based on the sortBy.key and the sortBy.direction
   // else sort by the index to return to the original order
-  const sortedResults = sortBy
-    ? results.sort((a, b) => {
-        if (a[sortBy.key] <= b[sortBy.key]) {
-          return sortBy.direction == "asc" ? -1 : 1;
-        } else {
-          return sortBy.direction == "asc" ? 1 : -1;
-        }
-      })
-    : results.sort((a, b) => a.index - b.index);
+  const sortedResults = [...results].sort((a, b) => {
+    if (!sortBy) {
+      return a.index - b.index;
+    } else if ((a[sortBy.key] || 0) < (b[sortBy.key] || 0)) {
+      return sortBy.direction == "asc" ? -1 : 1;
+    } else if ((a[sortBy.key] || 0) > (b[sortBy.key] || 0)) {
+      return sortBy.direction == "asc" ? 1 : -1;
+    } else {
+      return 0;
+    }
+  });
 
   const handleClickSortBy = (value) => {
     if (value === sortBy) {
