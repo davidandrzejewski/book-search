@@ -15,7 +15,7 @@ return state;
 }
 }
 
-3. My experience with performance optimization has been entirely on the back end node.js server side so far.
+3. I built a very large application at Eventscape, so I used webpack-bundle-analyzer to analyze where I can reduce the javascript file size sent to clients by lazy loading. I replaced libraries with lightweight libraries and implemented lazy loading so that my mission critical high traffic pages were lightweight and separate from the rest of the large application. The exercise reduced my Javascript bundle size on my most critical page by 65%.
 
 4. The API we used was very limitted in terms of what type of queries you can perform because it only allows us to use the URL to pass parameters. I would recommend they create a RESTful API to allow for more flexible GET requests. I would also limit the results to a fixed number to avoid serving such large JSON files by default. For example if I wanted the second 20 results in the query below, I would send the following get request:
 
