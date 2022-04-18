@@ -11,6 +11,7 @@ const SearchBar = ({ onSubmitForm }) => {
   const handleSubmitForm = (event) => {
     event.preventDefault();
 
+    // calls onSubmitForm callback in parent component
     onSubmitForm(searchTitle);
   };
 

@@ -9,7 +9,6 @@ const App = () => {
   const [isLoadingResults, setIsLoadingResults] = useState(false);
 
   const onSubmitForm = async (searchTerms) => {
-    console.log(searchTerms);
     // Turn on the loading spinner in the results table
     setIsLoadingResults(true);
 
@@ -38,8 +37,6 @@ const App = () => {
     // Turn off the loading spinner in the results table
     setIsLoadingResults(false);
   };
-
-  console.log({ results });
 
   return (
     <div className="App">

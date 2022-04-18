@@ -22,6 +22,7 @@ const sortByConfig = [
   },
 ];
 
+// reusable component used only within the ResultsTable component.
 const SortByButton = ({ sortBy, value, title, handleClickSortBy }) => {
   return (
     <button
@@ -36,7 +37,9 @@ const SortByButton = ({ sortBy, value, title, handleClickSortBy }) => {
 const ResultsTable = ({ results, isLoading }) => {
   const [sortBy, setSortBy] = useState(null);
 
-  // the function below sorts the results array based on the sortBy key and direction
+  // the declaration below assigns sortedResults the value of results sorted according to the conditions below
+  // If a sortBy was selected, then sort based on the sortBy.key and the sortBy.direction
+  // else sort by the index to return to the original order
   const sortedResults = sortBy
     ? results.sort((a, b) => {
         if (a[sortBy.key] <= b[sortBy.key]) {
@@ -49,8 +52,10 @@ const ResultsTable = ({ results, isLoading }) => {
 
   const handleClickSortBy = (value) => {
     if (value === sortBy) {
+      // if the value is the current sortBy value, reset the state to null
       setSortBy(null);
     } else {
+      // else set the sortBy value to the value provided
       setSortBy(value);
     }
   };
@@ -58,6 +63,7 @@ const ResultsTable = ({ results, isLoading }) => {
   return (
     <div>
       {isLoading ? (
+        /* If the app is loading results, display the loading spinner component */
         <LoadingSpinner />
       ) : results.length ? (
         <div>
